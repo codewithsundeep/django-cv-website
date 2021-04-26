@@ -1,0 +1,82 @@
+
+* {
+
+margin: 0;
+padding: 0; 
+}
+
+
+footer a{
+    text-decoration: none;
+    color: white;
+}
+div .w3-container{
+border-radius: 20px!important;
+}
+.w3-card-4{
+  border-bottom-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.contactForm{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 60%;
+  border-radius: 10px;
+  padding: 5px;
+  position: sticky;
+  bottom: 0;
+  left: 20%;
+}
+.contactForm input, textarea{
+  width: 95%;
+  height: 30px;
+  border-radius: 10px;
+  outline: none;
+  padding: 3px;
+
+}
+textarea{
+  height: 
+  200px;
+  margin-bottom: 3px;
+}
+.btns{
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  width: 95%;
+}
+input[type="submit"],
+input[type="reset"]{
+  width: 100%;
+  cursor: pointer;
+}
+button{
+  cursor: pointer;
+}
+.head{
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  width: 100%;
+  
+}
+.head1{
+  text-decoration: underline white;
+}
+.close{
+  color: red;
+  margin-right: 10px;
+  cursor: pointer;
+}
+.contactButton{
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  border-radius: 5px;
+}
+
+

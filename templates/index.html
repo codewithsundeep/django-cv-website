@@ -1,0 +1,111 @@
+{% extends 'base.html' %}
+
+{% block personalInfo %}
+<body class="w3-indigo">
+{% if messages %}
+{% for message in messages %}
+{{message |safe}}
+{% endfor %}
+{% endif %}
+<!-- Page Container -->
+<div class="w3-content w3-margin-top" style="max-width:1400px;">
+
+  <!-- The Grid -->
+  <div class="w3-row-padding">
+  
+    <!-- Left Column -->
+
+      
+   
+    <div class="w3-third">
+    
+      <div class="w3-light-gray w3-text-grey w3-card-4">
+        <div class="w3-display-container">
+          <img src="{{my_info.Image}}" style="width:100%" alt="Avatar">
+          <div class="w3-display-bottomleft w3-container w3-text-black">
+            <h2>{{my_info.Name}}</h2>
+          </div>
+        </div>
+        <div class="w3-container">
+          <p><i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-teal"></i>{{my_info.Title}}</p>
+          <p><i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-teal"></i>{{my_info.Address}}</p>
+          <p><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-teal"></i>{{my_info.Email}}</p>
+          <p><i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-teal"></i>{{my_info.Phone}}</p>
+        
+          {% comment %} personal info ended {% endcomment %}
+          <hr>
+          {% endblock personalInfo %}
+{% comment %} Skill started {% endcomment %}
+{% block skills %}
+        {% for item in skill %}
+
+        <p>{{item.Skill}}</p>
+          <div class="w3-light-grey w3-round-xlarge w3-small">
+            <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:{{item.Percent}}%">{{item.Percent}}%</div>
+          </div>
+          {% endfor %}
+          {% comment %} skill ended {% endcomment %}
+         {% endblock skills %}
+
+            {% block language %}
+            {% for item in lang %}
+         
+          <p>{{item.Language}}</p>
+          <div class="w3-light-grey w3-round-xlarge">
+            <div class="w3-round-xlarge w3-teal" style="height:24px;width:{{item.Percent}}%"></div>
+          </div>
+          {% endfor %}
+          {% endblock language %}
+
+
+{% block currentWork %}
+
+        <div class="w3-container">
+          <h5 class="w3-opacity"><b>{{cwork.Title}}</b></h5>
+          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>{{cwork.Started_at}} - <span class="w3-tag w3-teal w3-round">Current</span></h6>
+          <p>{{cwork.Description}}</p>
+          <hr>
+        </div>
+        {% endblock currentWork %}
+
+        {% block workExp %}
+        {% for item in wex %}
+        <div class="w3-container">
+          <h5 class="w3-opacity"><b>{{item.Title}}</b></h5>
+          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>{{item.Started_at}} - {{item.Leave_at}}</h6>
+          <p>{{item.Description}}</p>
+          <hr>
+        </div>
+     {% endfor %}
+      {% endblock workExp %}
+{% block education %}
+     {% for item in ed %}
+        <div class="w3-container">
+          <h5 class="w3-opacity"><b>{{item.Title}}</b></h5>
+          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>{{item.Started_at}}-{{item.Leave_at}}</h6>
+          <p>{{item.Description}}</p>
+          <hr>
+        </div>
+{% endfor %}
+{% endblock education %}
+
+{% block social %}
+
+<a href="{% if social.Facebook %}{{social.Facebook}}{% endif %}"target="_blank">
+  <i class="fa fa-facebook-official w3-hover-opacity">
+  </i>
+  </a>
+  <a href="{{social.Instagram}}"target="_blank">
+  <i class="fa fa-instagram w3-hover-opacity"></i>
+  </a>
+  <a href="{{social.Pintrest}}"target="_blank">
+  <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+  </a>
+  <a href="{{social.Twitter}}"target="_blank">
+  <i class="fa fa-twitter w3-hover-opacity"></i>
+  </a>
+  <a href="{{social.Linkedin}}"target="_blank">
+  <i class="fa fa-linkedin w3-hover-opacity"></i>
+  </a>
+
+{% endblock social %}
